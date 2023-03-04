@@ -15,7 +15,21 @@ jobs:
     name: DEBUG
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+
+    - name: blah
+      run: |
+        echo "Base Ref: ${{ github.event.pull_request.base.ref }}"; \
+        echo "Base Label: ${{ github.event.pull_request.base.label }}"; \
+        echo "Base SHA: ${{ github.event.pull_request.base.sha }}"; \
+        echo "Head Ref: ${{ github.event.pull_request.head.ref }}"; \
+        echo "Head Label: ${{ github.event.pull_request.head.label }}"; \
+        echo "Head SHA: ${{ github.event.pull_request.head.sha }}";
+
+    - name: checkout PR commit
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+
     - name: debug
       run: |
         git branch \
