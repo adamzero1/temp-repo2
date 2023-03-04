@@ -27,7 +27,7 @@ jobs:
 
     - name: AAAAA
       run: |
-        git fetch origin ${{ github.event.pull_request.base.ref }
+        git fetch origin ${{ github.event.pull_request.base.ref }}
 
     - name: checkout PR commit
       uses: actions/checkout@v3
