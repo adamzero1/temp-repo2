@@ -13,7 +13,10 @@ jobs:
   unit-tests:
     runs-on: ubuntu-latest
     steps:
-
+      - name: debug
+        run: |
+          echo "yo yo yo"
+          
       - name: Checkout PR commit
         uses: actions/checkout@v3
         with:
