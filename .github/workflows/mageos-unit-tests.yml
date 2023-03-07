@@ -1,10 +1,10 @@
 name: Unit Tests
-
-on:
-  pull_request:
-    branches:
-      - 2.4-develop
-      - nx-work
+run-name: ${{ github.actor }} is running Unit Tests
+on: [workflow_call]
+  # pull_request:
+  #   branches:
+  #     - 2.4-develop
+  #     - nx-work
 
 permissions:
   contents: write
